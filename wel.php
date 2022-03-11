@@ -1,5 +1,13 @@
 <?php
   include('config.php');
+  if (!isset($p_id)) {
+    if(isset($_GET['p_id']) &&  !empty($_GET['p_id'])){
+      $p_id = $_GET['p_id'];
+    }
+  }
+   $query2 = "SELECT * FROM players ORDER BY pID";
+  $players = $db->query($query2);
+
 ?>
 <html> 
   <head>
@@ -39,5 +47,36 @@
       </div>
       <button type="submit" name="btnSub">Add</button>
     </form>
+    <div id="content">
+       <table>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>High School</th>
+          <th>Position</th>
+          <th>State</th>
+          <th>Email</th>
+          <th class="right">Class</th>
+          <th>&nbsp;</th>
+        </tr>
+        <?php foreach ($players as $player) : ?>
+        <tr>
+          <td><?php echo $player['pID']; ?></td>
+          <td><?php echo $player['fName']; ?></td>
+          <td><?php echo $player['lName']; ?></td>
+          <td><?php echo $player['highSchool']; ?></td>
+          <td><?php echo $player['position']; ?></td>
+          <td><?php echo $player['state']; ?></td>
+          <td><?php echo $player['email']; ?></td>
+          <td class="right"><?php echo $player['class']; ?> </td>
+          <td><form action="delete_player.php" method="post" id="delete_player_form">
+            <input type="hidden" name="p_id" value="<?php echo $player['pID']; ?>" />
+            <input type="submit" value="Delete" />
+            </form></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+    </div>
   </body>
 </html>

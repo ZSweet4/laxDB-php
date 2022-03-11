@@ -1,7 +1,6 @@
 <?php
 
   include("config.php");
-
   $query = "select * from tblusers";
   $result = $db->query($query);
 

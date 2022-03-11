@@ -116,3 +116,30 @@ input[type="radio"] {
 input[type="radio"]:checked {
   background-color: #76cf9f;
 }
+#content {
+  float: left;
+  width: 500px;
+  padding-bottom: 1.5em;
+}
+.right {
+  text-align: right;
+}
+ul {
+  margin: 0 0 1em 0;
+  padding: 0 0 0 2.5em;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border: 1px solid #e7e7e7;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px dashed #e7e7e7;
+  padding: .2em .5em .2em .5em;
+  vertical-align: top;
+  text-align: left;
+  color: #e7e7e7;
+}
