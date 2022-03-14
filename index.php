@@ -41,11 +41,7 @@
   <body>
 
     <h3 align="center">Welcome back, please add an account or click for the sign in page.</h3>
-    <div id="topnav">
-    <ul>
-      <li><a href="add.php">ADD</a></li>
-    </ul>
-    </div>
+    <h5 align="center"><a href="add.php">ADD</a></h5>
     <br>
     <form action="" id="main" method="post">
       <div class="input-parent">
